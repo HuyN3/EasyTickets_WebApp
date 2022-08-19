@@ -29,14 +29,14 @@ namespace EasyTicketsSolution.WebApp.Data
         public virtual DbSet<Theater> Theaters { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-SJNFETB\\SQLEXPRESS;Initial Catalog=EasyTickets_WebApp;User ID=sa;Password=100199;Trusted_Connection=True");
-            }
-        }
+//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//        {
+//            if (!optionsBuilder.IsConfigured)
+//            {
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//                optionsBuilder.UseSqlServer("Data Source=DESKTOP-SJNFETB\\SQLEXPRESS;Initial Catalog=EasyTickets_WebApp;User ID=sa;Password=100199;Trusted_Connection=True");
+//            }
+//        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -48,9 +48,9 @@ namespace EasyTicketsSolution.WebApp.Data
 
                 entity.Property(e => e.DateBooking).HasColumnType("date");
 
-                entity.HasOne(d => d.Customer)
+                entity.HasOne(d => d.User)
                     .WithMany(p => p.Bookings)
-                    .HasForeignKey(d => d.CustomerId)
+                    .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK__Booking__Custome__571DF1D5");
             });
 
@@ -102,10 +102,10 @@ namespace EasyTicketsSolution.WebApp.Data
 
                 entity.Property(e => e.Name).HasMaxLength(50);
 
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Customers)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK__Customer__UserId__5441852A");
+                //entity.HasOne(d => d.Customer)
+                //    .WithMany(p => p.Users)
+                //    .HasForeignKey(d => d.UserId)
+                //    .HasConstraintName("FK__Customer__UserId__5441852A");
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -217,6 +217,10 @@ namespace EasyTicketsSolution.WebApp.Data
 
                             j.ToTable("UserRole");
                         });
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.Users)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__Customer__UserId__5441852A");
             });
 
             OnModelCreatingPartial(modelBuilder);

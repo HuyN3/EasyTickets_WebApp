@@ -7,7 +7,8 @@ namespace EasyTicketsSolution.WebApp.Data
     {
         public Customer()
         {
-            Bookings = new HashSet<Booking>();
+            Users = new HashSet<User>();
+           // Bookings = new HashSet<Booking>();
         }
 
         public int CustomerId { get; set; }
@@ -18,7 +19,8 @@ namespace EasyTicketsSolution.WebApp.Data
         public string? Address { get; set; }
         public int? UserId { get; set; }
 
-        public virtual User? User { get; set; }
-        public virtual ICollection<Booking> Bookings { get; set; }
+       // public virtual User? User { get; set; }
+       public virtual ICollection<User> Users { get; set; }
+      //  public virtual ICollection<Booking> Bookings { get; set; }
     }
 }
