@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EasyTicketsSolution.WebApp.Data
+namespace EasyTicketsSolution.Data.Data
 {
     public partial class Service
     {
@@ -11,8 +11,8 @@ namespace EasyTicketsSolution.WebApp.Data
         }
 
         public int ServiceId { get; set; }
-        public string? Name { get; set; }
-        public decimal? Price { get; set; }
+        public string? ServiceDescription { get; set; }
+        public decimal? ServicePrice { get; set; }
         public int? TheaterId { get; set; }
 
         public virtual Theater? Theater { get; set; }

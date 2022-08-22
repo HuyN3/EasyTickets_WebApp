@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EasyTicketsSolution.WebApp.Data
+namespace EasyTicketsSolution.Data.Data
 {
     public partial class Theater
     {
@@ -12,10 +12,12 @@ namespace EasyTicketsSolution.WebApp.Data
         }
 
         public int TheaterId { get; set; }
-        public string? Name { get; set; }
-        public long? Phone { get; set; }
-        public string? Address { get; set; }
+        public string? TheaterName { get; set; }
+        public long? TheaterPhone { get; set; }
+        public string? TheaterAddress { get; set; }
+        public int? CityId { get; set; }
 
+        public virtual City? City { get; set; }
         public virtual ICollection<Room> Rooms { get; set; }
         public virtual ICollection<Service> Services { get; set; }
     }

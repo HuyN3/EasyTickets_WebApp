@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTicketsSolution.WebApp", "EasyTicketsSolution.WebApp\EasyTicketsSolution.WebApp.csproj", "{C721000F-1C5D-4759-90FB-46A57576FB25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyTicketsSolution.WebApp", "EasyTicketsSolution.WebApp\EasyTicketsSolution.WebApp.csproj", "{C721000F-1C5D-4759-90FB-46A57576FB25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTicketsSolution.Data", "EasyTicketsSolution.Data\EasyTicketsSolution.Data.csproj", "{C70F7E95-6915-4270-A9AF-A51FE09C8F33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyTicketsSolution.Data", "EasyTicketsSolution.Data\EasyTicketsSolution.Data.csproj", "{C70F7E95-6915-4270-A9AF-A51FE09C8F33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTicketsSolution.Application", "EasyTicketsSolution.Application\EasyTicketsSolution.Application.csproj", "{7A9DD5CC-C91F-4996-B7CE-6F42D7513776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyTicketsSolution.Application", "EasyTicketsSolution.Application\EasyTicketsSolution.Application.csproj", "{7A9DD5CC-C91F-4996-B7CE-6F42D7513776}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8A0FDE3F-1D75-471C-B58D-8395C135E7D6}"
 	ProjectSection(SolutionItems) = preProject

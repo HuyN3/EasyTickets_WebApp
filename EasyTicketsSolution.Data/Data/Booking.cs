@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EasyTicketsSolution.WebApp.Data
+namespace EasyTicketsSolution.Data.Data
 {
     public partial class Booking
     {
@@ -11,11 +11,11 @@ namespace EasyTicketsSolution.WebApp.Data
         }
 
         public int BookingId { get; set; }
-        public decimal? Cost { get; set; }
         public DateTime? DateBooking { get; set; }
-        public int? CustomerId { get; set; }
+        public decimal? Cost { get; set; }
+        public int? UserId { get; set; }
 
-        public virtual Customer? Customer { get; set; }
+        public virtual User? User { get; set; }
         public virtual ICollection<BookingDetail> BookingDetails { get; set; }
     }
 }

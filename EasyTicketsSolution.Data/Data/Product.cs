@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EasyTicketsSolution.WebApp.Data
+namespace EasyTicketsSolution.Data.Data
 {
     public partial class Product
     {
@@ -11,10 +11,14 @@ namespace EasyTicketsSolution.WebApp.Data
         }
 
         public int ProductId { get; set; }
-        public string? Name { get; set; }
-        public DateTime? ReleaseDate { get; set; }
+        public string? ProductName { get; set; }
+        public string? ProductDescription { get; set; }
         public string? Publisher { get; set; }
+        public DateTime? ReleaseDate { get; set; }
+        public string? Image { get; set; }
+        public int? ShowTypeId { get; set; }
 
+        public virtual ShowType? ShowType { get; set; }
         public virtual ICollection<ShowAsignment> ShowAsignments { get; set; }
     }
 }
